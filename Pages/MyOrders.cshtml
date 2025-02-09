@@ -1,0 +1,17 @@
+﻿@page
+@model Shop2.Pages.MyOrdersModel
+@{
+	ViewData["Title"] = "My Orders";
+	string userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value
+				?? User.FindFirst("sub")?.Value
+				?? "Unknown";
+}
+
+<div class="orders-page">
+    <h2>Orders</h2>
+    <div id="orders-container"></div>
+</div>
+<script>
+	window.userId = "@userId";
+</script>
+<script src="/js/myOrders.js"></script>

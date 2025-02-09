@@ -1,0 +1,25 @@
+﻿@page
+@model Shop2.Pages.CartModel
+@{
+	ViewData["Title"] = "Cart";
+	string userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value
+				?? User.FindFirst("sub")?.Value
+				?? "Unknown";
+}
+
+<div class="cart-container">
+	<h2>Cart</h2>
+
+	<div id="cartItemsContainer"></div>
+
+	<div class="total">
+		<span>Total price: </span><span id="totalPrice">0</span>
+	</div>
+
+	<button class="checkout-btn" id="checkoutBtn">Checkout</button>
+</div>
+<script>
+	window.userId = "@userId";
+</script>
+<script src="/js/cart.js"></script>
+

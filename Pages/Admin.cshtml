@@ -1,0 +1,47 @@
+﻿@page
+@model Best_Shop.Pages.AdminModel
+@{
+}
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+    <div class="category-form">
+        <h2>Add Category</h2>
+        <form id="categoryForm">
+            <label class="form-label" for="category-name">Name</label>
+            <input class="form-input" type="text" id="category-name" required>
+            <label class="form-label" for="category-description">Description</label>
+            <textarea class="form-input" id="category-description" rows="4"></textarea>
+            <button class="form-button" type="submit">Add</button>
+        </form>
+        <div class="categories-list" id="categories-list"></div>
+    </div>
+
+    <div class="category-form">
+        <h2>Add Product</h2>
+        <form id="productForm">
+            <label class="form-label" for="product-name">Name</label>
+            <input class="form-input" type="text" id="product-name" required>
+
+            <label class="form-label" for="product-description">Description</label>
+            <textarea class="form-input" id="product-description" rows="4"></textarea>
+
+            <label class="form-label" for="product-price">Price</label>
+            <input class="form-input" type="number" id="product-price" required>
+
+            <label class="form-label" for="product-amount">Amount</label>
+            <input class="form-input" type="number" id="product-amount" required>
+
+            <label class="form-label" for="product-image">Path to image</label>
+            <input class="form-input" type="text" id="product-image">
+
+            <label class="form-label" for="product-category">Category</label>
+            <select class="form-input" id="product-category" required></select>
+
+            <button class="form-button" type="submit">Add</button>
+        </form>
+    </div>
+    <div class="category-form">
+        <div class="products-list" id="products-list"></div>
+    </div>
+</div>
+

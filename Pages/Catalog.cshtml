@@ -1,0 +1,31 @@
+﻿@page
+@model Shop2.Pages.Index1Model
+@{
+    ViewData["Title"] = "Categories";
+	string userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value
+				?? User.FindFirst("sub")?.Value
+			    ?? "Unknown";
+}
+
+<div class="catalog-container">
+    <h1 class="catalog-title">Catalog</h1>
+    <div class="catalog-grid">
+        <div class="catalog-sider">
+            <div class="catalog-sider-option">
+                <label for="catalogSearchInput">Search</label>
+                <input type="text" id="catalogSearchInput" placeholder="Search products..." />
+            </div>
+            <div class="catalog-sider-option">
+                <label for="catalogCategoriesSelect">Categories</label>
+                <select id="catalogCategoriesSelect">
+                    <option value="" selected>All Categories</option>
+                </select>
+            </div>
+        </div>
+        <div class="catalog-list"></div>
+    </div>
+</div>
+<script>
+    window.userId = "@userId";
+</script>
+<script src="/js/catalog.js"></script>
